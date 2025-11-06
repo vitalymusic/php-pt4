@@ -45,6 +45,9 @@
             <h1>Lapa nav atrasta</h1>
         <?php endif; ?>
 
+        <footer>
+            <?php include_once("./form.php")?>
+        </footer>
         <script>
 
         </script>
