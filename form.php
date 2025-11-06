@@ -8,4 +8,6 @@
 <script>
     // Uzrakstīt Fetch vaicājumu un atgriezt servera atbildi
 
+    
+
 </script>
