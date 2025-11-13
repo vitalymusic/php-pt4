@@ -24,7 +24,7 @@ $(document).ready(()=>{
 
 
 
-// Izdarīt tā, lai koment;ari parādītos pēc pogas nospiešanas
+// Izdarīt tā, lai komentāri parādītos pēc pogas nospiešanas
 
 
 })
