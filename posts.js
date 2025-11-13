@@ -25,6 +25,6 @@ $(document).ready(()=>{
 
 
 // Izdarīt tā, lai komentāri parādītos pēc pogas nospiešanas
-
+// Pievienot CSS pēc sava ieskata, lai skaisti izskatās
 
 })
