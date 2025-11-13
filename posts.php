@@ -1,3 +1,5 @@
+<?php require_once("./functions.php") ?>
+
 <div class="posts">
     <h2>Raksti</h2>
     <div class="post">
