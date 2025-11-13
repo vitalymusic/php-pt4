@@ -4,7 +4,6 @@ $(document).ready(()=>{
 
     $.each(commentDivs,(index,item)=>{
         let postId = $(item).attr('data-postid');
-
         $.get(`./functions.php?action=comments&postid=${postId}`,(resp)=>{
            return resp;
         }).then((dati)=>{
@@ -25,7 +24,7 @@ $(document).ready(()=>{
 
 
 
-
+// Izdarīt tā, lai koment;ari parādītos pēc pogas nospiešanas
 
 
 })
