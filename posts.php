@@ -1,12 +1,20 @@
 <?php require_once("./functions.php") ?>
+<?php $posts = get_all_posts();?>
+
 
 <div class="posts">
     <h2>Raksti</h2>
-    <div class="post">
-        <h3>Nosaukums</h3>
-        <h3>HTML saturs</h3>
-        <div class="comments">Komentāri</div>
-    </div>
+    <?php foreach($posts as $post): ?>
+        <div class="post">
+            <h3><?=$post["post_name"]?></h3>
+            <div><?=$post["post_content"]?></div>
+            <div class="comments">
 
+            </div>
+            <p><?=$post["create_date"]?></p>
+        </div>
+    <?php endforeach;?>    
 
 </div>
+
+<?php  ?>
