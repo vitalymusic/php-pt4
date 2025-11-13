@@ -5,7 +5,10 @@ $(document).ready(()=>{
     $.each(commentDivs,(index,item)=>{
         let postId = $(item).attr('data-postid');
 
-        console.log(postId);
+        $.get(`./functions.php?postid=${postId}`,(resp)=>{
+            let comments = JSON.parse(resp);
+            console.log(comments);
+        })
     })
 
 
