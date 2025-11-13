@@ -40,6 +40,7 @@
             <p>Sekcijas 1 saturs</p>
         <?php elseif ($_GET["sekcija"] == 2): ?>
             <h1>Sekcijas 2 saturs</h1>
+                <?php include("posts.php")?>
             <p>Sekcijas 2 saturs</p>
         <?php else: ?>
             <h1>Lapa nav atrasta</h1>

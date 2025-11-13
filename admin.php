@@ -1,11 +1,11 @@
 <?php
     session_start();
     var_dump($_SESSION);
-    if(!$_SESSION["loggedin"]){
-        header("location: ./index.php");
-        json_encode(["error"=>"not authorized"]);
-        exit("Nepieciešams autorizēties");
-    }
+    // if(!$_SESSION["loggedin"]){
+    //     header("location: ./index.php");
+    //     json_encode(["error"=>"not authorized"]);
+    //     exit("Nepieciešams autorizēties");
+    // }
 
 
 ?>
