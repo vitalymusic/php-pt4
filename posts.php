@@ -8,10 +8,14 @@
         <div class="post">
             <h3><?=$post["post_name"]?></h3>
             <div><?=$post["post_content"]?></div>
-            <div class="comments">
-
+            <!-- <button >Parādīt komentārus</button> -->
+            <div class="comments" data-postid="<?=$post["id"]?>">
+                  
             </div>
             <p><?=$post["create_date"]?></p>
+
+           
+
         </div>
     <?php endforeach;?>    
 

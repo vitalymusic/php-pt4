@@ -9,6 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <title><?php echo $name ?></title>
 
     <style>
@@ -58,6 +60,9 @@
         <h1>Mājaslapa ir slēgta</h1>
     <?php endif; ?>
 
+    <?php if($_GET["sekcija"]==2):?>
+        <script src="./posts.js"></script>
+    <?php endif ?>
 </body>
 
 </html>
