@@ -15,6 +15,15 @@ if(isset($_GET["action"])){
         echo get_comments_by_postId($id);
     }
 
+    if($_GET["action"]=="add_comments"){
+        if($_SERVER["REQUEST_METHOD"]==="POST"){
+            add_newComment($_POST);
+        }
+        
+
+    }
+
+
 
 
 
@@ -67,6 +76,21 @@ function get_comments_by_postId($id){
     return json_encode($data,JSON_UNESCAPED_UNICODE);
 
 
+}
+
+
+function add_newComment($data){
+     global $conn;
+    //  $sql = "INSERT into comments (`user`, `comment_text`,`post_id`) VALUES ('{$data["user"]}','{$data["comment"]}','{$data["post_id"]}')";  
+    $stmt = $conn->prepare("INSERT into comments (`user`, `comment_text`,`post_id`) VALUES (?,?,?)");
+    $stmt->bind_param("sss", $data["user"], $data["comment"], $data["post_id"]);
+    
+
+    if($stmt->execute()){
+        echo json_encode(["success"=>true]);
+    }else{
+         echo json_encode(["error"=>$conn->error]);
+    };
 }
 
 
