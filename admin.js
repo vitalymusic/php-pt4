@@ -8,14 +8,13 @@ $(document).ready(()=>{
         $.ajax({
             url: 'functions.php?action=uploadfile',
             contentType: false, 
-            type: 'PUT',
+            type: 'POST',
             data: data,
             processData: false,
             success: (data)=> {
                  console.log(data);   
             }
         })
-
 
     })
 })
