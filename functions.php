@@ -38,6 +38,15 @@ if($_SERVER["REQUEST_METHOD"]==="POST" && $_GET["action"]=="uploadfile"){
         $fileName = $_FILES["file"]["name"];
         $uploadFolder = "upload/";
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $uploadFolder . $fileName)){
+            // Faila nosaukuma ieraksts datubāzē
+            global $conn;
+
+            $sql = "INSERT INTO 'images' ('image_name','url') VALUES ('bilde','$fileName')";
+
+            if($conn->query($sql)){
+                echo "added to DB";
+            }
+            
             echo "uploaded";
         }
     }
