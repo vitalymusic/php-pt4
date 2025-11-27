@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST" && $_GET["action"]=="uploadfile"){
             // Faila nosaukuma ieraksts datubāzē
             global $conn;
 
-            $sql = "INSERT INTO 'images' ('image_name','url') VALUES ('bilde','$fileName')";
+            $sql = "INSERT INTO `images` (`image_name`,`url`) VALUES ('{$_POST["fileName"]}','$fileName')";
 
             if($conn->query($sql)){
                 echo "added to DB";
