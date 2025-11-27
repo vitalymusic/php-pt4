@@ -19,21 +19,59 @@ if(isset($_GET["action"])){
         if($_SERVER["REQUEST_METHOD"]==="POST"){
             add_newComment($_POST);
         }
-        
 
     }
 
+    
+    if($_GET["action"]=="listImages"){
+        // echo "test";
+         echo listImages();
 
+    }   
+    
+    if($_GET["action"]=="getImageByID"){
+            echo getImageById($_GET["id"]);
 
+    }  
 
+   
+        
 
+  
 
 }
 
 
+
+function listImages(){
+    global $conn;
+    $sql = "SELECT * from `images`";
+
+    $result = $conn->query($sql);
+    $data = [];
+
+
+    while($row = $result->fetch_assoc()){
+         $data[] = $row;
+    }
+    
+
+    $data = json_encode($data,JSON_UNESCAPED_UNICODE);
+    return $data;
+
+}
+
+ function getImageById($id){
+       return; 
+
+}
+
 // PUT vaicājumi
 
 if($_SERVER["REQUEST_METHOD"]==="POST" && $_GET["action"]=="uploadfile"){
+        // echo "test";
+        // exit();
+
     if($_FILES){
         $fileName = $_FILES["file"]["name"];
         $uploadFolder = "upload/";
@@ -45,8 +83,9 @@ if($_SERVER["REQUEST_METHOD"]==="POST" && $_GET["action"]=="uploadfile"){
 
             if($conn->query($sql)){
                 echo "added to DB";
+            }else{
+                echo $conn->error;
             }
-            
             echo "uploaded";
         }
     }
