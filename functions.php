@@ -33,19 +33,14 @@ if(isset($_GET["action"])){
 
 // PUT vaicājumi
 
-if($_SERVER["REQUEST_METHOD"]==="PUT"){
+if($_SERVER["REQUEST_METHOD"]==="POST" && $_GET["action"]=="uploadfile"){
     if($_FILES){
         $fileName = $_FILES["file"]["name"];
         $uploadFolder = "upload/";
-
         if(move_uploaded_file($_FILES["file"]["tmp"], $uploadFolder . $fileName)){
             echo "uploaded";
         }
-
     }
-
-
-
 
 }
 

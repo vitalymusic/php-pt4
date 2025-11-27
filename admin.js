@@ -1,17 +1,16 @@
 $(document).ready(()=>{
     $('#file_upload').on('submit', (e)=>{
         e.preventDefault();
-        let data = $('#file_upload').serialize();
-        // $.post('functinos.php?action=uploadfile',data, (resp)=>{
 
-
-        // })
+        let form = $('#file_upload')[0];
+        let data = new FormData(form);
 
         $.ajax({
-            url: 'functions.php',
-            contentType: 'multipart/form-data',
+            url: 'functions.php?action=uploadfile',
+            contentType: false, 
             type: 'PUT',
             data: data,
+            processData: false,
             success: (data)=> {
                  console.log(data);   
             }
