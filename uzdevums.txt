@@ -7,6 +7,7 @@
 
 
 4. iespēja redzēt attēlus admin panelī(dzēšana)
+4.1. ievietot animaciju (kad tiek izdzēsta bilde, viņa izgaist (fadeOut));
 
 
 5. Izveidot bilžu izvadi Galvenā lapā (index.php);
