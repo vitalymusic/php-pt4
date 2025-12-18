@@ -36,8 +36,9 @@ $(document).ready(()=>{
                     <img src="./upload/${item.url}">
                     <p>${item.image_name}</p>
                     <button data-id="${item.id}">Izdzēst bildi</button>    
-                
-            `).then(()=>{
+            `)
+        })
+    }).then(()=>{
                 $('.photos button').click((e)=>{
                     id = e.target.dataset.id;
                     if(confirm("Tiešām izdzēst?",false)){
@@ -46,12 +47,6 @@ $(document).ready(()=>{
                 });
 
             })
-        })
-    })
-
-
-
-
 
 })
 
