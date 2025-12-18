@@ -36,7 +36,13 @@ if (isset($_GET["action"])) {
 
     }
 
+    //deleteImageById
 
+    if($_GET["action"]=="deleteImage"){
+        $id = $_GET["id"];
+        $filename = $_POST["fileName"];
+        deleteImageById($id,$filename);
+    }
 
 
 
