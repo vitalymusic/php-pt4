@@ -4,3 +4,11 @@
 
 2. Admin panelī izvadīt komentārus ka sarakstu
 3. Pretī katram komentāram ielikt idzēšanas pogu
+
+
+4. iespēja redzēt attēlus admin panelī(dzēšana)
+
+
+5. Izveidot bilžu izvadi Galvenā lapā (index.php);
+Izmantot: https://www.jsdelivr.com/package/npm/lightgallery
+

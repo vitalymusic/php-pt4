@@ -30,8 +30,9 @@ if(isset($_GET["action"])){
     }   
     
     if($_GET["action"]=="getImageByID"){
+            if(! isset($_GET["id"])) exit();
             echo getImageById($_GET["id"]);
-
+            
     }  
 
    
@@ -62,7 +63,13 @@ function listImages(){
 }
 
  function getImageById($id){
-       return; 
+    
+    global $conn;
+    $sql = "SELECT * from `images` WHERE id=$id";
+
+    $result = $conn->query($sql);
+    $data = json_encode($result->fetch_assoc(),JSON_UNESCAPED_UNICODE);
+    return $data;
 
 }
 
