@@ -12,7 +12,12 @@ $(document).ready(()=>{
             data: data,
             processData: false,
             success: (data)=> {
-                 console.log(data);   
+                    data = JSON.parse(data);
+                 if(data.upload==="success"){
+                    form.reset();
+                 }else{
+                    alert(JSON.parse(data).error);
+                 }
             }
         })
 

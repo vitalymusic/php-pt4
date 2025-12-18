@@ -12,3 +12,11 @@
 5. Izveidot bilžu izvadi Galvenā lapā (index.php);
 Izmantot: https://www.jsdelivr.com/package/npm/lightgallery
 
+
+
+6. Sadaļas un izvēlne no DB
+
+7. Wordpress diena
+
+
+

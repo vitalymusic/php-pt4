@@ -32,7 +32,10 @@
         <h3>Ielādēt failus uz servera</h3>
         <?php include("file_upload_form.php")?>
     </div>
-    
+    <div class="photos">
+            
+    </div>
+
 
     <script src="./admin.js"></script>
 </body>
