@@ -35,7 +35,7 @@ $(document).ready(()=>{
                 <div class="image">
                     <img src="./upload/${item.url}">
                     <p>${item.image_name}</p>
-                    <button data-id="${item.id}" data-filename="${item.id}">Izdzēst bildi</button>    
+                    <button data-id="${item.id}" data-filename="${item.url}">Izdzēst bildi</button>    
             `)
         })
     }).then(()=>{
