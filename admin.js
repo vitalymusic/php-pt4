@@ -22,6 +22,29 @@ $(document).ready(()=>{
         })
 
     })
+
+
+    // Bilžu parādīšana admin panelī
+
+    // {"id":"1","image_name":"bilde","url":"images.jpeg"}
+
+    $.get('./functions.php?action=listImages',(data)=>{
+        data = JSON.parse(data);
+        data.forEach((item,i)=>{
+            $('.photos').append(`
+                <div class="image">
+                    <img src="./upload/${item.url}">
+                    <p>${item.image_name}</p>
+                    <button data-id="${item.id}">Izdzēst bildi</button>    
+                
+            `)
+        })
+    })
+
+
+
+
+
 })
 
 
