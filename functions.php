@@ -195,4 +195,22 @@ function add_newComment($data)
 
 
 
+function deleteImageById($id){
+     global $conn;
+      $sql = "DELETE from images WHERE id='$id'";
+      $uploadFolder = "upload/";
+
+      try{
+        $conn->query($sql);
+
+      }
+      catch(Exception $e){
+        echo json_encode(["error"=>$e]);
+      }
+
+    //   $result = $conn->query($sql);
+
+
+}
+
 ?>

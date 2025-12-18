@@ -35,14 +35,17 @@ $(document).ready(()=>{
                 <div class="image">
                     <img src="./upload/${item.url}">
                     <p>${item.image_name}</p>
-                    <button data-id="${item.id}">Izdzēst bildi</button>    
+                    <button data-id="${item.id}" data-filename="${item.id}">Izdzēst bildi</button>    
             `)
         })
     }).then(()=>{
                 $('.photos button').click((e)=>{
                     id = e.target.dataset.id;
+                    fileName = e.target.dataset.filename;
                     if(confirm("Tiešām izdzēst?",false)){
-                        $.get('./functions.php?action=deleteImage&id=' + id)
+                        $.post('./functions.php?action=deleteImage&id=' + id,{
+                            fileName:fileName
+                        })
                     }
                 });
 
