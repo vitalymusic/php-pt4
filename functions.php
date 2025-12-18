@@ -195,13 +195,14 @@ function add_newComment($data)
 
 
 
-function deleteImageById($id){
+function deleteImageById($id,$filename){
      global $conn;
       $sql = "DELETE from images WHERE id='$id'";
       $uploadFolder = "upload/";
 
       try{
         $conn->query($sql);
+        unlink($uploadFolder . $filename);
 
       }
       catch(Exception $e){
